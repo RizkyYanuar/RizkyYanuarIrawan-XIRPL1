@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Quicksand&display=swap');
 
+:root {
+    --black-color: #474747;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -50,16 +54,6 @@
     margin: 40px;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #111;
-    opacity: 0;
-}
 
 
 ul li {
@@ -70,3 +64,39 @@ ul li {
 ul li p {
     margin: 0; /* Hilangkan margin bawaan pada elemen <p> di dalam <li> */
 }
+
+.skills-container {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .skill-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-label {
+    flex: 2;
+    margin-right: 10px;
+  }
+  
+  .skill-progress {
+    height: 20px;
+    background-color: var(--black-color);
+    border-radius: 10px;
+    width: calc(var(--skill) * 1%);
+    transition: width 1s ease-in-out;
+    transform: rotate(180deg);
+  }
+  
+  /* Optional styling for better visualization */
+  .skill-progress[data-skill="0"] {
+    background-color: #d9534f;
+  }
+  
+  .skill-progress[data-skill="100"] {
+    background-color: #5cb85c;
+  }
