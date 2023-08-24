@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.sidebar {
+    width: 24%;
+    height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Tambahkan properti ini untuk konten di tengah secara vertikal */
+    position: fixed;
+}
+
+.img-wrapper {
+    width: 100%; /* Pastikan gambar tidak keluar dari parentnya */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.img-sidebar img {
+    width: 200px;
+    height: 200px;
+    object-fit:cover ;
+}
+
+/* Tambahkan kode ini ke CSS Anda */
+
+.hero {
+    margin-left: 24%;
+    background-color: white;
+    width: 76%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; /* Tambahkan ini untuk membuat konten dalam .hero relatif terhadap .hero itu sendiri */
+}
+
+.hero-text {
+    position: absolute;
+    width: 76%;
+    z-index: 1; /* Pastikan teks berada di atas elemen ::after */
+    margin: 40px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0;
+}
+
+
+ul li {
+    line-height: 1.2; /* Sesuaikan nilai ini sesuai kebutuhan Anda */
+    margin-bottom: 10px; /* Untuk memberi sedikit ruang antar elemen <li> */
+}
+
+ul li p {
+    margin: 0; /* Hilangkan margin bawaan pada elemen <p> di dalam <li> */
+}
