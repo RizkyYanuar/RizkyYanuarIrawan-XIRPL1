@@ -107,6 +107,7 @@
                                 <div class="skill-label">PABAJI</div>
                                 <div class="skill-progress" data-skill="70" style="--skill: 70;"></div>
                             </div>
+                            <a href="profile">Profile</a>
                     </div>
                         </div>
                     </div>
