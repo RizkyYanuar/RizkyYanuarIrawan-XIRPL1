@@ -53,39 +53,19 @@
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="drop-shadow-lg"><path fill="#f8d41f" fill-opacity="1" d="M0,256L17.1,256C34.3,256,69,256,103,229.3C137.1,203,171,149,206,122.7C240,96,274,96,309,90.7C342.9,85,377,75,411,74.7C445.7,75,480,85,514,96C548.6,107,583,117,617,117.3C651.4,117,686,107,720,112C754.3,117,789,139,823,128C857.1,117,891,75,926,53.3C960,32,994,32,1029,64C1062.9,96,1097,160,1131,160C1165.7,160,1200,96,1234,96C1268.6,96,1303,160,1337,160C1371.4,160,1406,96,1423,64L1440,32L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z"></path></svg>
 
-    <div class="box">
-        <div class="container-fluid mb-4">
-            <div class="row">
-                <div class="col">
-                <div class="card" style="">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-warning">Go somewhere</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="card" style="">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-warning">Go somewhere</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col">
-                <div class="card" style="">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-warning">Go somewhere</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
+    <div class="box w-screen bg-white p-20">
+        <span class="before:block before:absolute before:-inset-1 before:bg-[#f8d41f] before:w-16 before:h-16 before:top-1 before:rounded-full relative inline-block">
+            <span class="relative text-6xl tracking-[0.5rem]">Skills</span>
+        </span>
+        <div class="box-wrapper grid grid-flow-col gap-x-6 gap-y-20 pt-5 grid-rows-2 md:grid-rows-1">
+            <img src="{{asset('img/logo-html-5-1024.png')}}" alt="HTML" style="animation: float 2s infinite; animation-delay: 2.4s" data-aos="fade-left" data-aos-duration="2000">
+            <img src="{{asset('img/logo-css-3-1024.png')}}" alt="css" style="animation: float 2s infinite; animation-delay: 2.6s" data-aos="fade-right" data-aos-duration="2000">
+            <img src="{{asset('img/logo-javascript-icon-1024.png')}}" alt="JavaScript" style="animation: float 2s infinite; animation-delay: 2.8s" data-aos="fade-right" data-aos-duration="2000">
+            <img src="{{asset('img/bootstrap-1024.png')}}" alt="bootstrap" style="animation: float 2s infinite; animation-delay: 3s" data-aos="fade-left" data-aos-duration="2000">
+            <img src="{{asset('img/logo-react-1024.png')}}" alt="React" style="animation: float 2s infinite; animation-delay: 3.2s" data-aos="fade-right" data-aos-duration="2000">
+            <img src="{{asset('img/logo-laravel-1024.png')}}" alt="laravel" style="animation: float 2s infinite; animation-delay: 3.4s" data-aos="fade-right" data-aos-duration="2000">
+            <img src="{{asset('img/logo-php-1024.png')}}" alt="php" style="animation: float 2s infinite; animation-delay: 3.6s" data-aos="fade-left" data-aos-duration="2000">
+            <img src="{{asset('img/tailwind-css-1024.png')}}" alt="Tailwind" style="animation: float 2s infinite; animation-delay: 3.8s" data-aos="fade-left" data-aos-duration="2000">
         </div>
     </div>
 
