@@ -21,9 +21,9 @@
                 </div>
                 <div class="nav-item col-start-6 col-end-9 flex items-center justify-center">
                     <ul class="list-none flex flex-row justify-around w-96" style="font-family: 'Poppins';">
-                        <li><a href="" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Pengenalan</a></li>
-                        <li><a href="" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Box</a></li>
-                        <li><a href="" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Kontak</a></li>
+                        <li><a href="#about" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Pengenalan</a></li>
+                        <li><a href="#skills" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Skills</a></li>
+                        <li><a href="#project" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Project</a></li>
                         <li><a href="cv" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">CV</a></li>
                     </ul>
                 </div>
@@ -36,9 +36,9 @@
             </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="drop-shadow-lg"><path fill="#f8d41f" fill-opacity="1" d="M0,32L24,53.3C48,75,96,117,144,154.7C192,192,240,224,288,202.7C336,181,384,107,432,80C480,53,528,75,576,106.7C624,139,672,181,720,181.3C768,181,816,139,864,138.7C912,139,960,181,1008,186.7C1056,192,1104,160,1152,149.3C1200,139,1248,149,1296,149.3C1344,149,1392,139,1416,133.3L1440,128L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path></svg>    
-    <div class="intro w-screen h-screen relative">
-        <div class="slider__warpper">
-            <div class="flex__container flex--pikachu flex--active" data-slide="1">
+        <div class="intro w-screen h-screen relative" id="about">
+            <div class="slider__warpper">
+                <div class="flex__container flex--pikachu flex--active" data-slide="1">
                 <div class="flex__item flex__item--left">
                 <div class="flex__content">
                     <p class="text--sub" data-aos="fade-down" data-aos-duration="800">Tentang Saya</p>
@@ -53,7 +53,7 @@
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="drop-shadow-lg"><path fill="#f8d41f" fill-opacity="1" d="M0,256L17.1,256C34.3,256,69,256,103,229.3C137.1,203,171,149,206,122.7C240,96,274,96,309,90.7C342.9,85,377,75,411,74.7C445.7,75,480,85,514,96C548.6,107,583,117,617,117.3C651.4,117,686,107,720,112C754.3,117,789,139,823,128C857.1,117,891,75,926,53.3C960,32,994,32,1029,64C1062.9,96,1097,160,1131,160C1165.7,160,1200,96,1234,96C1268.6,96,1303,160,1337,160C1371.4,160,1406,96,1423,64L1440,32L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z"></path></svg>
 
-    <div class="skills w-screen bg-white p-20">
+    <div class="skills w-screen bg-white p-20" id="skills">
         <span class="before:block before:absolute before:-inset-1 before:bg-[#f8d41f] before:w-16 before:h-16 before:top-1 before:rounded-full relative inline-block">
             <span class="relative text-6xl tracking-[0.5rem]">Skills</span>
         </span>
@@ -71,7 +71,7 @@
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8d41f" fill-opacity="1" d="M0,64L40,64C80,64,160,64,240,96C320,128,400,192,480,208C560,224,640,192,720,160C800,128,880,96,960,112C1040,128,1120,192,1200,202.7C1280,213,1360,171,1400,149.3L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 
-    <div class="box-parent p-20 bg-[#f8d41f] w-screen">
+    <div class="box-parent p-20 bg-[#f8d41f] w-screen" id="project">
         <span class="before:block before:absolute before:-inset-1 before:bg-[#000000] before:w-16 before:h-16 before:top-1 before:rounded-full relative inline-block">
             <span class="relative text-6xl tracking-[0.5rem] text-white">Project</span>
         </span>
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div class="footer w-screen flex justify-center pb-8">
+    <div class="footer w-screen flex justify-center pb-8 bg-[#f8d41f]">
         <h1 class="text-lg">Made with &#10084; by Rizky Yanuar Irawan &#169; 2023. </h1>
     </div>
 
