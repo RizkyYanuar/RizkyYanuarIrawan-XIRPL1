@@ -25,7 +25,12 @@ class SiswaController extends Controller
 
     public function search(Request $request) {
         $keyword = $request->input('keyword');
-        $results = Siswa::where('nis', 'LIKE', "%$keyword%")->get();
+        $results = Siswa::where('nis', 'LIKE', "%$keyword%")
+    ->orWhere('nama', 'LIKE', "%$keyword%")
+    ->orWhere('alamat', 'LIKE', "%$keyword%")
+    ->orWhere('tanggal_lahir', 'LIKE', "%$keyword%")
+    ->orWhere('jenis_kelamin', 'LIKE', "%$keyword%")
+    ->get();
         $table = Siswa::all();
         return view('siswa/daftarsiswa', compact('results', 'table'));
     }
