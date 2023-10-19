@@ -32,3 +32,4 @@ Route::post('/siswa', [SiswaController::class, 'createSiswa'])->name('createSisw
 Route::get('/siswa/editsiswa/{id}', [SiswaController::class, 'editSiswa'])->name('editSiswa');
 Route::put('/siswa/editsiswa/{id}', [SiswaController::class, 'updateSiswa'])->name('updateSiswa');
 Route::delete('/siswa/delete/{id}', [SiswaController::class, 'deleteSiswa'])->name('deleteSiswa');
+Route::post('/siswa', [SiswaController::class, 'search'])->name('search');

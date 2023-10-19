@@ -9,9 +9,10 @@ class SiswaController extends Controller
 {
     public function index() {
         $table = Siswa::all();
+
+    
         return view('siswa/daftarsiswa', compact('table'));
     }
-
     public function addSiswa() {
         return view('siswa/addsiswa');
     }
@@ -19,9 +20,15 @@ class SiswaController extends Controller
     public function createSiswa(Request $request) {
         $data = $request->only(['nis', 'nama', 'jenis_kelamin', 'alamat', 'tanggal_lahir']);
         Siswa::create($data);
-        $table = Siswa::all();
-        return view('siswa/daftarsiswa', compact('table'));
+        return redirect()->route('daftarsiswa')->with('success', 'Data Siswa berhasil ditambah.');
 }
+
+    public function search(Request $request) {
+        $keyword = $request->input('keyword');
+        $results = Siswa::where('nis', 'LIKE', "%$keyword%")->get();
+        $table = Siswa::all();
+        return view('siswa/daftarsiswa', compact('results', 'table'));
+    }
 
     public function editSiswa($id) {
         $data = Siswa::find($id);

@@ -25,6 +25,7 @@
                         <li><a href="#skills" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Skills</a></li>
                         <li><a href="#project" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Project</a></li>
                         <li><a href="cv" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">CV</a></li>
+                        <li><a href="{{route('daftarsiswa')}}" class="text-lg font-bold hover:text-orange-700 ease-out duration-100 hover:drop-shadow-2xl">Siswa</a></li>
                     </ul>
                 </div>
             </div>

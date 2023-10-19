@@ -12,19 +12,20 @@
 
     </head>
 
-    <body>
-        <div class="container pt-3">
-            <button type="button" class="btn btn-info"><a href="{{ route('daftarsiswa') }}"
+    <body style='background-color: #e9ecef;'>
+        <div class="container pt-3 shadow">
+            <button type="button" class="btn btn-primary"><a href="{{ route('daftarsiswa') }}"
                     class="text-decoration-none text-white">Kembali</a></button>
-            <h1 class="mt-2">Tambah Siswa</h1>
+            <h1 class="mt-2 text-center">Tambah Siswa</h1>
 
             <form action="{{ route('createSiswa') }}" method="POST">
                 @csrf
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col">
+                        <div class="wrapper-add">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Nis:</span>
-                            <input type="text" class="form-control" placeholder="Nis" name="nis" required>
+                            <input type="text" class="form-control" placeholder="Nis" name="nis" required >
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Nama:</span>
@@ -45,6 +46,7 @@
                                 required>
                         </div>
                         <button type="submit" class="btn btn-success">Tambah Siswa</button>
+                        </div>
                     </div>
                 </div>
             </form>
