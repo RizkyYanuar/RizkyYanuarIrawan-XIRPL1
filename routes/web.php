@@ -28,7 +28,7 @@ Route::get('/profile', function () {
 
 Route::get('/siswa', [SiswaController::class, 'index'])->name('daftarsiswa');
 Route::get('/siswa/addsiswa', [SiswaController::class, 'addSiswa'])->name('addSiswa');
-Route::post('/siswa', [SiswaController::class, 'createSiswa'])->name('createSiswa');
+Route::post('/siswa/addsiswa', [SiswaController::class, 'createSiswa'])->name('createSiswa');
 Route::get('/siswa/editsiswa/{id}', [SiswaController::class, 'editSiswa'])->name('editSiswa');
 Route::put('/siswa/editsiswa/{id}', [SiswaController::class, 'updateSiswa'])->name('updateSiswa');
 Route::delete('/siswa/delete/{id}', [SiswaController::class, 'deleteSiswa'])->name('deleteSiswa');

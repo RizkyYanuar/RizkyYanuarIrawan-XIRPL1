@@ -23,29 +23,29 @@
                 <div class="row">
                     <div class="col">
                         <div class="wrapper-add">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Nis:</span>
-                            <input type="text" class="form-control" placeholder="Nis" name="nis" required >
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Nama:</span>
-                            <input type="text" class="form-control" placeholder="Nama" name="nama" required>
-                        </div>
-                        <select name="jenis_kelamin" id="" class="form-select mb-3" required>
-                            <option selected>Jenis Kelamin: </option>
-                            <option value="pria">Pria</option>
-                            <option value="wanita">Wanita</option>
-                        </select>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Alamat:</span>
-                            <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Tanggal Lahir:</span>
-                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir"
-                                required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Tambah Siswa</button>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Nis:</span>
+                                <input type="text" class="form-control" placeholder="Nis" name="nis" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Nama:</span>
+                                <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                            </div>
+                            <select name="jenis_kelamin" id="" class="form-select mb-3" required>
+                                <option selected>Jenis Kelamin: </option>
+                                <option value="pria">Pria</option>
+                                <option value="wanita">Wanita</option>
+                            </select>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Alamat:</span>
+                                <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Tanggal Lahir:</span>
+                                <input type="date" class="form-control" placeholder="Tanggal Lahir"
+                                    name="tanggal_lahir" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Tambah Siswa</button>
                         </div>
                     </div>
                 </div>
