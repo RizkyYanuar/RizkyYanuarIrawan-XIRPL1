@@ -7,11 +7,21 @@ use App\Models\Siswa;
 
 class SiswaController extends Controller
 {
-    public function index() {
-        $table = Siswa::all();
-
-    
-        return view('siswa/daftarsiswa', compact('table'));
+    public function index(Request $request) {
+        $keyword = $request->keyword;
+        if(strlen($keyword)) {
+            $table = Siswa::where('nis', 'LIKE', "%$keyword%")
+            ->orWhere('nama', 'LIKE', "%$keyword%")
+            ->orWhere('alamat', 'LIKE', "%$keyword%")
+            ->orWhere('tanggal_lahir', 'LIKE', "%$keyword%")
+            ->orWhere('jenis_kelamin', 'LIKE', "%$keyword%")
+            ->paginate(100);
+            $message = 'none';
+        } else {
+        $table = Siswa::orderBy('nis')->paginate(5);
+        $message = 'flex';
+        }
+        return view('siswa/daftarsiswa', compact('table', 'message'));
     }
     public function addSiswa() {
         return view('siswa/addsiswa');
@@ -31,28 +41,15 @@ class SiswaController extends Controller
         return redirect()->route('daftarsiswa')->with('success', 'Data Siswa berhasil ditambah.');
     }
 
-    public function search(Request $request) {
-        $keyword = $request->input('keyword');
-        if ($keyword) {
-        $results = Siswa::where('nis', 'LIKE', "%$keyword%")
-        ->orWhere('nama', 'LIKE', "%$keyword%")
-        ->orWhere('alamat', 'LIKE', "%$keyword%")
-        ->orWhere('tanggal_lahir', 'LIKE', "%$keyword%")
-        ->orWhere('jenis_kelamin', 'LIKE', "%$keyword%")
-        ->get();
-        $message = 'Hasil Pencarian :';
-        } else {
-        $message = 'tidak ada hasil';
-        $results = Siswa::where('nis', '1')->first();
-
-        }
-        $table = Siswa::all();
-        return view('siswa/daftarsiswa', compact('results', 'table', 'message'));
-    }
-
     public function editSiswa($id) {
         $data = Siswa::find($id);
         return view('siswa/editsiswa', compact('data'));
+    }
+
+    public function showSiswa($id) {
+    $data = Siswa::find($id);
+    $message = 'flex';
+    return view('siswa/showsiswa', compact('data'));
     }
 
     public function updateSiswa(Request $request, $id)
