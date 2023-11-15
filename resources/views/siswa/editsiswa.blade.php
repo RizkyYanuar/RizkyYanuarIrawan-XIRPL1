@@ -14,6 +14,15 @@
 
     <body style='background-color: #e9ecef;'>
         <div class="container pt-3 shadow">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <button type="button" class="btn btn-primary"><a href="{{ route('daftarsiswa') }}"
                     class="text-decoration-none text-white">Kembali</a></button>
             <h1 class="mt-2 text-center">Edit Siswa</h1>
@@ -50,7 +59,9 @@
                                 <input type="date" class="form-control" placeholder="tanggal lahir"
                                     name="tanggal_lahir" value="{{ $data->tanggal_lahir }}" required>
                             </div>
-                            <button type="submit" class='btn btn-success'>Perbarui Data</button>
+                            <button type="submit" class='btn btn-success'
+                                onclick="return confirm('Apakah anda yakin untuk mengubah data ini?')">Perbarui
+                                Data</button>
                         </div>
                     </form>
                 </div>

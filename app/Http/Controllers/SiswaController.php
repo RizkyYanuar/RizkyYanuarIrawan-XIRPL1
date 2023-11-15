@@ -35,7 +35,7 @@ class SiswaController extends Controller
         'alamat' => 'required',
         'tanggal_lahir' => 'required|before_or_equal:today',
         ], [
-            'nis.unique' => 'Nim sudah terdaftar'
+            'nis.unique' => 'Nis sudah terdaftar'
         ]);
 
         $data = [
@@ -64,11 +64,13 @@ class SiswaController extends Controller
 {
     $data = Siswa::find($id);
     $request->validate([
-    'nis' => 'required',
+    'nis' => 'required|numeric|unique:siswa,nis',
     'nama' => 'required',
     'jenis_kelamin' => 'required',
     'alamat' => 'required',
     'tanggal_lahir' => 'required|before_or_equal:today',
+    ], [
+    'nis.unique' => 'Nis sudah terdaftar'
     ]);
 
     $data->nis = $request->input('nis');
