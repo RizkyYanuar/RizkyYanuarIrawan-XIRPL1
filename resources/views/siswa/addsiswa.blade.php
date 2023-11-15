@@ -18,6 +18,16 @@
                     class="text-decoration-none text-white">Kembali</a></button>
             <h1 class="mt-2 text-center">Tambah Siswa</h1>
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form action="{{ route('createSiswa') }}" method="POST">
                 @csrf
                 <div class="row">
@@ -25,27 +35,33 @@
                         <div class="wrapper-add">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nis:</span>
-                                <input type="text" class="form-control" placeholder="Nis" name="nis" required>
+                                <input type="text" class="form-control" placeholder="Nis" name="nis" required
+                                    value="{{ Session::get('nis') }}">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nama:</span>
-                                <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                                <input type="text" class="form-control" placeholder="Nama" name="nama" required
+                                    value="{{ Session::get('nama') }}">
                             </div>
-                            <select name="jenis_kelamin" id="" class="form-select mb-3" required>
+                            <select name="jenis_kelamin" id="" class="form-select mb-3" required
+                                value="{{ Session::get('jenis_kelamin') }}">
                                 <option selected>Jenis Kelamin: </option>
                                 <option value="pria">Pria</option>
                                 <option value="wanita">Wanita</option>
                             </select>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Alamat:</span>
-                                <input type="text" class="form-control" placeholder="Alamat" name="alamat" required>
+                                <input type="text" class="form-control" placeholder="Alamat" name="alamat" required
+                                    value="{{ Session::get('alamat') }}">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Tanggal Lahir:</span>
                                 <input type="date" class="form-control" placeholder="Tanggal Lahir"
-                                    name="tanggal_lahir" required>
+                                    name="tanggal_lahir" required value="{{ Session::get('tanggal_lahir') }}">
                             </div>
-                            <button type="submit" class="btn btn-success">Tambah Siswa</button>
+                            <button type="submit" class="btn btn-success"
+                                onclick="return confirm('Apakah yakin ingin menambahkan data ini ?')">Tambah
+                                Siswa</button>
                         </div>
                     </div>
                 </div>

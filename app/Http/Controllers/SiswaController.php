@@ -29,14 +29,22 @@ class SiswaController extends Controller
 
     public function createSiswa(Request $request) {
         $request->validate([
-        'nis' => 'required',
+        'nis' => 'required|numeric|unique:siswa,nis',
         'nama' => 'required',
         'jenis_kelamin' => 'required',
         'alamat' => 'required',
         'tanggal_lahir' => 'required|before_or_equal:today',
+        ], [
+            'nis.unique' => 'Nim sudah terdaftar'
         ]);
 
-        $data = $request->only(['nis', 'nama', 'jenis_kelamin', 'alamat', 'tanggal_lahir']);
+        $data = [
+            'nis' => $request->nis,
+            'nama' => $request->nama,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+            'tanggal_lahir' => $request->tanggal_lahir,
+        ];
         Siswa::create($data);
         return redirect()->route('daftarsiswa')->with('success', 'Data Siswa berhasil ditambah.');
     }
