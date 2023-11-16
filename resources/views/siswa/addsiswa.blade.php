@@ -35,13 +35,16 @@
                         <div class="wrapper-add">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nis:</span>
-                                <input type="text" class="form-control" placeholder="Nis" name="nis" required>
+                                <input type="text" class="form-control" placeholder="Nis" name="nis" required
+                                    value="{{ old('nis') }}">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nama:</span>
-                                <input type="text" class="form-control" placeholder="Nama" name="nama" required>
+                                <input type="text" class="form-control" placeholder="Nama" name="nama" required
+                                    value="{{ old('nama') }}">
                             </div>
-                            <select name="jenis_kelamin" id="" class="form-select mb-3" required ">
+                            <select name="jenis_kelamin" id="" class="form-select mb-3" required
+                                value="{{ old('jenis_kelamin') }}">
                                 <option selected>Jenis Kelamin: </option>
                                 <option value="pria">Pria</option>
                                 <option value="wanita">Wanita</option>
@@ -49,12 +52,12 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Alamat:</span>
                                 <input type="text" class="form-control" placeholder="Alamat" name="alamat" required
-                                    >
+                                    value="{{ old('alamat') }}">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Tanggal Lahir:</span>
                                 <input type="date" class="form-control" placeholder="Tanggal Lahir"
-                                    name="tanggal_lahir" required >
+                                    name="tanggal_lahir" required value="{{ old('tanggal_lahir') }}">
                             </div>
                             <button type="button" class="btn btn-success" onclick="confirmCreate()">Tambah
                                 Siswa</button>

@@ -87,7 +87,7 @@ $number = $table->firstItem();
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm mb-1"
-                                        onclick="return confirm('apakah anda yakin ingin menghapus data ini?')">Hapus</button>
+                                        onclick="return confirm('apakah anda yakin ingin menghapus data ini ?')">Hapus</button>
                                 </form>
                                 <a href="{{ route('showSiswa', ['id' => $siswaItem->id]) }}"
                                     class="btn btn-primary btn-sm">Show</a>

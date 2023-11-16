@@ -28,7 +28,7 @@
             <h1 class="mt-2 text-center">Edit Siswa</h1>
             <div class="row">
                 <div class="col">
-                    <form action="{{ route('updateSiswa', ['id' => $data->id]) }}" method="POST">
+                    <form action="{{ route('updateSiswa', ['id' => $data->id]) }}" method="POST" id="edit-form">
                         @csrf
                         @method('PUT')
                         <div class="wrapper-add">
@@ -59,8 +59,7 @@
                                 <input type="date" class="form-control" placeholder="tanggal lahir"
                                     name="tanggal_lahir" value="{{ $data->tanggal_lahir }}" required>
                             </div>
-                            <button type="submit" class='btn btn-success'
-                                onclick="return confirm('Apakah anda yakin untuk mengubah data ini?')">Perbarui
+                            <button type="button" class='btn btn-success' onclick="confirmEdit()">Perbarui
                                 Data</button>
                         </div>
                     </form>
@@ -70,6 +69,27 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            function confirmEdit() {
+                swal({
+                    title: 'Apakah Anda yakin ingin mengedit siswa ini?',
+                    icon: 'warning',
+                    buttons: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Tambahkan',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result) {
+                        // If user clicks "tambahkan," submit the form
+                        document.querySelector('#edit-form').submit();
+                    } else {
+                        exit;
+                    }
+                });
+            }
         </script>
     </body>
 
