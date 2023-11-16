@@ -59,28 +59,36 @@ class SiswaController extends Controller
     $message = 'flex';
     return view('siswa/showsiswa', compact('data'));
     }
-
-    public function updateSiswa(Request $request, $id)
+public function updateSiswa(Request $request, $id)
 {
-    $data = Siswa::find($id);
-    $request->validate([
-    'nis' => 'required|numeric|unique:siswa,nis',
-    'nama' => 'required',
-    'jenis_kelamin' => 'required',
-    'alamat' => 'required',
-    'tanggal_lahir' => 'required|before_or_equal:today',
-    ], [
-    'nis.unique' => 'Nis sudah terdaftar'
-    ]);
+$request->validate([
+'nis' => 'required|numeric|unique:siswa,nis,' . $id,
+'nama' => 'required',
+'jenis_kelamin' => 'required',
+'alamat' => 'required',
+'tanggal_lahir' => 'required|before_or_equal:today',
+], [
+'nis.unique' => 'NIS sudah terdaftar',
+]);
 
-    $data->nis = $request->input('nis');
-    $data->nama = $request->input('nama');
-    $data->jenis_kelamin = $request->input('jenis_kelamin');
-    $data->alamat = $request->input('alamat');
-    $data->tanggal_lahir = $request->input('tanggal_lahir');
-    $data->save();
+// Check if the new NIS already exists in the database
+$existingNis = Siswa::where('nis', $request->nis)->where('id', '!=', $id)->exists();
 
-    return redirect()->route('daftarsiswa')->with('success', 'Data berhasil diperbarui.');
+if ($existingNis) {
+return redirect()->route('daftarsiswa')->with('error', 'NIS sudah terdaftar. Gagal memperbarui data.');
+}
+
+$data = [
+'nis' => $request->nis,
+'nama' => $request->nama,
+'jenis_kelamin' => $request->jenis_kelamin,
+'alamat' => $request->alamat,
+'tanggal_lahir' => $request->tanggal_lahir,
+];
+
+Siswa::where('id', $id)->update($data);
+
+return redirect()->route('daftarsiswa')->with('success', 'Data berhasil diperbarui.');
 }
 
 public function deleteSiswa($id)

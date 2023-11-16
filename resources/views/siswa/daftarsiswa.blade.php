@@ -43,10 +43,18 @@ $number = $table->firstItem();
             </div>
 
             @if (session('success'))
-                <div class="alert alert-success" role="alert" id='alert'>
-                    {{ session('success') }}
-                    <span class="close-btn" id='myAlert'>&times;</span>
-                </div>
+                <script>
+                    // Display SweetAlert when the page loads
+                    document.addEventListener('DOMContentLoaded', function() {
+                        swal({
+                            title: 'Success!',
+                            text: '{{ session('success') }}',
+                            icon: 'success',
+                            showCloseButton: true,
+                            showConfirmButton: false
+                        });
+                    });
+                </script>
             @endif
 
             <table class="table-bordered table">
@@ -75,11 +83,11 @@ $number = $table->firstItem();
                                 <a href="{{ route('updateSiswa', ['id' => $siswaItem->id]) }}"
                                     class="btn btn-warning btn-sm mb-1">Edit</a>
                                 <form action="{{ route('deleteSiswa', ['id' => $siswaItem->id]) }}" method="POST"
-                                    class="d-inline">
+                                    class="d-inline" id="delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm mb-1"
-                                        onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">Hapus</button>
+                                        onclick="return confirm('apakah anda yakin ingin menghapus data ini?')">Hapus</button>
                                 </form>
                                 <a href="{{ route('showSiswa', ['id' => $siswaItem->id]) }}"
                                     class="btn btn-primary btn-sm">Show</a>
@@ -101,12 +109,8 @@ $number = $table->firstItem();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <script>
-        const closeAlert = document.getElementById("myAlert");
-        const alert = document.getElementById('alert');
-        closeAlert.addEventListener('click', function() {
-            alert.style.display = 'none';
-        });
-    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- JavaScript code for SweetAlert -->
 
 </html>
