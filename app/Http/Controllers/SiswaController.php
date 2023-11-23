@@ -72,11 +72,11 @@ $request->validate([
 ]);
 
 // Check if the new NIS already exists in the database
-$existingNis = Siswa::where('nis', $request->nis)->where('id', '!=', $id)->exists();
+// $existingNis = Siswa::where('nis', $request->nis)->where('id', '!=', $id)->exists();
 
-if ($existingNis) {
-return redirect()->route('daftarsiswa')->with('error', 'NIS sudah terdaftar. Gagal memperbarui data.');
-}
+// if ($existingNis) {
+// return redirect()->route('daftarsiswa')->with('error', 'NIS sudah terdaftar. Gagal memperbarui data.');
+// }
 
 $data = [
 'nis' => $request->nis,
